@@ -10,12 +10,6 @@
             ]
         },
         {
-            "event": "CONFIGURE",
-            "lifecycle_events": [
-                "epcclient_alice_relation_joined.sh"
-            ]
-        },
-        {
             "event": "START",
             "lifecycle_events": [
                 "oaispgw_start.sh"

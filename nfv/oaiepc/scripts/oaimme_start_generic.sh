@@ -1,13 +1,1 @@
-#!/bin/bash
-if [ -f "$SCRIPTS_PATH/func.sh" ]; then
-        source $SCRIPTS_PATH/func.sh
-else
-        >&2 echo "$SERVICE: Could not find functions file $SCRIPTS_PATH/func.sh!"
-        exit 1
-fi
-
-source_defaults_file
-
-# start the mme
-systemctl enable mme
-systemctl start mme
+../../oaimme/scripts/oaimme_start_generic.sh

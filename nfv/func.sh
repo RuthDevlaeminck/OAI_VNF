@@ -61,3 +61,10 @@ function install_openvpn {
   mkdir -p ~/client-configs/files/
   chmod 700 ~/client-configs/files
 }
+
+function getInterfaceName {
+  interfaceNumber=$1
+  echo "ifconfig | grep HWaddr | head -$interfaceNumber | tail -1 | cut -d' ' -f1"
+  name=$(ifconfig | grep HWaddr | head -$interfaceNumber | tail -1 | cut -d' ' -f1)
+  echo $name
+}

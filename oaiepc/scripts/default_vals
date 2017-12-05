@@ -1,0 +1,26 @@
+SERVICE="OAI-HSS"
+OPENAIRCN_DIR="/root/openair-cn"
+ETC_TARGET="/usr/local/etc/oai"
+LOGFILE="/opt/install.log"
+INTERFACES_DIR="/etc/network/interfaces.d"
+
+DB_PASSWORD="MS_PW_ROOT"
+HSS_USER="hssadmin"
+HSS_PASS="MS_PW_PHP"
+HSS_DB="oai_db"
+DB_HOST="localhost"
+HSS_DB_FILE="$OPENAIRCN_DIR/SRC/OAI_HSS/db/oai_db.sql"
+OPERATOR_KEY="31323334353637383930313233343536"
+
+LOG_DIR="/var/log/oai"
+ESCAPED_LOG_DIR="\/var\/log\/oai"
+
+MCC="001"
+MNC="01"
+MME_GID="32814"
+MME_CODE="124"
+TAC="210"
+# these must be escapes comma separated lists
+INT_ALG_LIST="\"EIA1\""
+CIPH_ALG_LIST="\"EEA0\""
+

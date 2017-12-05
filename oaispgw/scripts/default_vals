@@ -1,0 +1,8 @@
+SERVICE="OAI-SPGW"
+OPENAIRCN_DIR="/root/openair-cn"
+ETC_TARGET="/usr/local/etc/oai"
+LOGFILE="/opt/install.log"
+INTERFACES_DIR="/etc/network/interfaces.d"
+
+LOG_DIR="/var/log/oai"
+ESCAPED_LOG_DIR="\/var\/log\/oai"

@@ -4,6 +4,6 @@ nfvo_version: 5.1.0
 image:
     upload: false
     names:
-        - oai-image-raw 
+        - oai-image 
 vim_types:
     - openstack

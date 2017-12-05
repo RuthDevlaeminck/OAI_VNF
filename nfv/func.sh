@@ -52,3 +52,12 @@ function create_interface_config_file {
     echo "iface $interface inet dhcp" >> $interfaces_file
     ifup $interface
 }
+
+
+function install_openvpn {
+  apt install -y screen openvpn
+  apt-get update
+  mkdir -p ~/openvpn-ca/keys
+  mkdir -p ~/client-configs/files/
+  chmod 700 ~/client-configs/files
+}

@@ -9,4 +9,4 @@ fi
 
 source_defaults_file 
 
-update_config_file "SGW_IPV4_ADDRESS_FOR_S11                = \"127.0.11.2\/8\"" "SGW_IPV4_ADDRESS_FOR_S11                = \"$oaispgw_net_d_oa\/8\"" $ETC_TARGET/mme.conf
+update_config_file "SGW_IPV4_ADDRESS_FOR_S11                = \"127.0.11.2\/8\"" "SGW_IPV4_ADDRESS_FOR_S11                = \"$oaispgw_mgmt_oa\/8\"" $ETC_TARGET/mme.conf

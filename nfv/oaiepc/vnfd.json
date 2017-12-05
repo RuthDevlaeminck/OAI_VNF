@@ -57,10 +57,6 @@
                         {
                             "virtual_link_reference": "mgmt_oa",
                             "interfaceId": 0
-                        },
-                        {
-                            "virtual_link_reference": "net_d_oa",
-                            "interfaceId": 1
                         }
                     ]
                 }
@@ -72,9 +68,6 @@
     "virtual_link": [
         {
             "name": "mgmt_oa"
-        },
-        {
-            "name": "net_d_oa"
         }
     ],
     "deployment_flavour": [

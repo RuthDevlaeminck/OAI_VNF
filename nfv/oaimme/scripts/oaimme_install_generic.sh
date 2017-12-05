@@ -10,7 +10,7 @@ fi
 source_defaults_file 
 
 SIGNAL_INTERFACE=$1
-SIGNAL_IP=$net_d_oa
+SIGNAL_IP=$mgmt_oa
 
 cp $OPENAIRCN_DIR/ETC/mme.conf $ETC_TARGET
 cp $OPENAIRCN_DIR/ETC/mme_fd.conf $ETC_TARGET/freeDiameter

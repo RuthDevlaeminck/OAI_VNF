@@ -3,6 +3,7 @@ OPENAIRCN_DIR="/root/openair-cn"
 ETC_TARGET="/usr/local/etc/oai"
 LOGFILE="/opt/install.log"
 INTERFACES_DIR="/etc/network/interfaces.d"
+DNS="8.8.8.8"
 
 DB_PASSWORD="MS_PW_ROOT"
 HSS_USER="hssadmin"

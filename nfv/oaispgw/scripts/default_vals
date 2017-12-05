@@ -6,3 +6,4 @@ INTERFACES_DIR="/etc/network/interfaces.d"
 
 LOG_DIR="/var/log/oai"
 ESCAPED_LOG_DIR="\/var\/log\/oai"
+DNS="8.8.8.8"

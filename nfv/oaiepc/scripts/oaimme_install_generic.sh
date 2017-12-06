@@ -1,1 +1,0 @@
-../../oaimme/scripts/oaimme_install_generic.sh

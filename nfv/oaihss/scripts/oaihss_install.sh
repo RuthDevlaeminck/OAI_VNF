@@ -9,7 +9,7 @@ fi
 
 source_defaults_file
 
-echo "127.0.1.1       hss.openair-cn.3gppnetwork.org   hss" >> /etc/hosts
+echo "127.0.1.1       hss.openair4G.eur   hss" >> /etc/hosts
 echo "127.0.1.1       $hostname" >> /etc/hosts
 
 #SIGNAL_INTERFACE=$(getInterface 2)

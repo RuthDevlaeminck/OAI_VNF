@@ -1,5 +1,5 @@
 {
-    "name": "oaimme",
+    "name": "oaimme_theirs",
     "vendor": "Evolved Core Network",
     "version": "1",
     "lifecycle_event": [
@@ -37,6 +37,14 @@
             {
                 "confKey": "MME_CODE",
                 "value": "124"
+            },
+            {
+                "confKey": "hss_ip",
+                "value": ""
+            },
+            {
+                "confKey": "EMULATOR",
+                "value": "true"
             }
         ]
     },
@@ -71,12 +79,12 @@
     "type": "oaimme",
     "endpoint": "generic",
     "requires": {
-        "oaihss": {
+        "oaihss_theirs": {
             "parameters": [
-                "mgmt_oa_floatingIp"
+                "mgmt_oa"
             ]
         },
-        "oaispgw": {
+        "oaispgw_theirs": {
             "parameters": [
                 "mgmt_oa"
             ]

@@ -1,9 +1,9 @@
-name: oaimme
+name: oaimme_theirs
 provider: "Evolved Core Network"
 nfvo_version: 5.1.0
 image:
     upload: false
     names:
-        - oai-image-raw 
+        - oai-image-raw
 vim_types:
     - openstack

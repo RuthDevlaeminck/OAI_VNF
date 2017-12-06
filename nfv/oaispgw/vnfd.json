@@ -1,5 +1,5 @@
 {
-    "name": "oaispgw",
+    "name": "oaispgw_theirs",
     "vendor": "Evolved Core Network",
     "version": "1",
     "lifecycle_event": [
@@ -22,14 +22,6 @@
             {
                 "confKey": "SCRIPTS_PATH",
                 "value": "/opt/openbaton/scripts"
-            },
-            {
-                "confKey": "UE_CIDR",
-                "value": "192.168.3.0/24"
-            },
-            {
-                "confKey": "UE_MTU",
-                "value": "1500"
             }
         ]
     },

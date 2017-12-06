@@ -64,7 +64,23 @@ function install_openvpn {
 
 function getInterfaceName {
   interfaceNumber=$1
-  echo "ifconfig | grep HWaddr | head -$interfaceNumber | tail -1 | cut -d' ' -f1"
-  name=$(ifconfig | grep HWaddr | head -$interfaceNumber | tail -1 | cut -d' ' -f1)
+  name=$(ifconfig -a | grep HWaddr | head -$interfaceNumber | tail -1 | cut -d' ' -f1)
   echo $name
 }
+
+
+
+function install_service_file()
+{
+  SERVICE_INSTALL=$1
+  OPENAIRCN_DIR=/root/openair-cn
+  SERVICE_TEMPLATE=/opt/openbaton/scripts/oai.service
+  SERVICE_DIR=/etc/systemd/system
+  SERVICE_FILE=$SERVICE_DIR/$SERVICE_INSTALL.service
+
+  cp $SERVICE_TEMPLATE $SERVICE_FILE
+  sed -i -e "s:%OPENAIRCN_DIR%:$OPENAIRCN_DIR:g" $SERVICE_FILE
+  sed -i -e "s:%SERVICE%:$SERVICE_INSTALL:g" $SERVICE_FILE
+}
+
+

@@ -9,6 +9,6 @@ fi
 
 source_defaults_file
 
-echo "$oaihss_mgmt_oa_floatingIp       hss.openair-cn.3gppnetwork.org   hss" >> /etc/hosts
+echo "$oaihss_mgmt_oa       hss.openair4G.eur   hss" >> /etc/hosts
 
-update_config_file "ConnectTo = \"127.0.0.1\"" "ConnectTo = \"$oaihss_mgmt_oa_floatingIp\"" $ETC_TARGET/freeDiameter/mme_fd.conf
+update_config_file "ConnectTo = \"127.0.0.1\"" "ConnectTo = \"$oaihss_mgmt_oa\"" $ETC_TARGET/freeDiameter/mme_fd.conf

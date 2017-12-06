@@ -7,11 +7,16 @@ INTERFACES_DIR="/etc/network/interfaces.d"
 LOG_DIR="/var/log/oai"
 ESCAPED_LOG_DIR="\/var\/log\/oai"
 
-MCC="001"
-MNC="01"
-MME_GID="32814"
-MME_CODE="124"
-TAC="210"
+MCC_REAL="001"
+MNC_REAL="01"
+TAC_REAL="210"
 # these must be escapes comma separated lists
-INT_ALG_LIST="\"EIA1\""
-CIPH_ALG_LIST="\"EEA0\""
+INT_ALG_LIST_REAL="\"EIA1\""
+CIPH_ALG_LIST_REAL="\"EEA0\""
+
+MCC_EMULATOR="208"
+MNC_EMULATOR="93"
+TAC_EMULATOR="210"
+# these must be escapes comma separated lists
+INT_ALG_LIST_EMULATOR=""
+CIPH_ALG_LIST_EMULATOR=""

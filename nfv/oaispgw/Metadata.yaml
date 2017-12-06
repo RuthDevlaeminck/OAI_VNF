@@ -1,9 +1,9 @@
-name: oaispgw
+name: oaispgw_theirs
 provider: "Evolved Core Network"
 nfvo_version: 5.1.0
 image:
     upload: false
     names:
-        - oai-image 
+        - oai-image-theirs 
 vim_types:
     - openstack

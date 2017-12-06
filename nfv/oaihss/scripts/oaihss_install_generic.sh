@@ -29,8 +29,10 @@ update_config_file "MYSQL_pass   = \"MS_PW_PHP\";" "MYSQL_pass   = \"$HSS_PASS\"
 update_config_file "OPERATOR_key = \"1006020f0a478bf6b699f15c062e42b3\"" "OPERATOR_key = \"31323334353637383930313233343536\""  $ETC_TARGET/hss.conf
 
 cd $OPENAIRCN_DIR/SCRIPTS
-./check_hss_s6a_certificate $ETC_TARGET/freeDiameter hss.3gppnetwork.org
+./check_hss_s6a_certificate $ETC_TARGET/freeDiameter hss.openair4G.eur
 
-cp $SCRIPTS_PATH/oai_db.sql $OPENAIRCN_DIR/SRC/OAI_HSS/db/oai_db.sql
+#cp $SCRIPTS_PATH/oai_db.sql $OPENAIRCN_DIR/SRC/OAI_HSS/db/oai_db.sql
 mysql -u root -p$DB_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO '$HSS_USER'@'localhost' IDENTIFIED BY '$HSS_PASS' WITH GRANT OPTION;" 
 mysql -u root -p$DB_PASSWORD -e "FLUSH PRIVILEGES;"
+
+install_service_file "hss"

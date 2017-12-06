@@ -10,10 +10,24 @@ fi
 source_defaults_file 
 
 SIGNAL_INTERFACE=$1
-SIGNAL_IP=$mgmt_oa
+SIGNAL_IP=$2
 
 cp $OPENAIRCN_DIR/ETC/mme.conf $ETC_TARGET
 cp $OPENAIRCN_DIR/ETC/mme_fd.conf $ETC_TARGET/freeDiameter
+
+if [ "$EMULATOR" == "true" || "$EMULATOR" == "TRUE" ]; then
+  MCC=$MCC_EMULATOR
+  MNC=$MNC_EMULATOR
+  TAC=$TAC_EMULATOR
+  INT_ALG_LIST=$INT_ALG_LIST_EMULATOR
+  CIPH_ALG_LIST_EMULATOR=$CIPH_ALG_LIST_EMULATOR
+else
+  MCC=$MCC_REAL
+  MNC=$MNC_REAL
+  TAC=$TAC_REAL
+  INT_ALG_LIST=$INT_ALG_LIST_REAL
+  CIPH_ALG_LIST_EMULATOR=$CIPH_ALG_LIST_REAL
+fi
 
 update_config_file "MME_INTERFACE_NAME_FOR_S1_MME         = \"enp0s8\";" "MME_INTERFACE_NAME_FOR_S1_MME         = \"$SIGNAL_INTERFACE\";" $ETC_TARGET/mme.conf 
 update_config_file "MME_IPV4_ADDRESS_FOR_S1_MME           = \"192.168.4.80\/24\";" "MME_IPV4_ADDRESS_FOR_S1_MME           = \"$SIGNAL_IP\/24\";" $ETC_TARGET/mme.conf
@@ -27,7 +41,8 @@ update_config_file "ORDERED_SUPPORTED_INTEGRITY_ALGORITHM_LIST = \[ \];" "ORDERE
 update_config_file "ORDERED_SUPPORTED_CIPHERING_ALGORITHM_LIST = \[ \];" "ORDERED_SUPPORTED_CIPHERING_ALGORITHM_LIST = [ $CIPH_ALG_LIST ];" $ETC_TARGET/mme.conf
 
 cd $OPENAIRCN_DIR/SCRIPTS
-./check_mme_s6a_certificate $ETC_TARGET/freeDiameter $hostname.3gppnetwork.org
+./check_mme_s6a_certificate $ETC_TARGET/freeDiameter $hostname.openair4G.eur
 
 
+install_service_file "mme"
 

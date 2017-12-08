@@ -73,7 +73,7 @@
     ],
     "deployment_flavour": [
         {
-            "flavour_key": "m1.medium"
+            "flavour_key": "m1.xlarge"
         }
     ],
     "type": "oaimme",

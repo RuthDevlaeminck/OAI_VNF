@@ -1,5 +1,5 @@
 {
-    "name": "oaihss_theirs",
+    "name": "oaihss",
     "vendor": "Evolved Core Network",
     "version": "1",
     "lifecycle_event": [
@@ -62,7 +62,7 @@
     "type": "oaihss",
     "endpoint": "generic",
     "requires": {
-        "oaimme_theirs": {
+        "oaimme": {
             "parameters": [
                 "mgmt_oa",
                 "hostname"

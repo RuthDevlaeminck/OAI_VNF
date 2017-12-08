@@ -24,8 +24,8 @@ cp $OPENAIRCN_DIR/ETC/acl.conf $ETC_TARGET/freeDiameter
 cp $OPENAIRCN_DIR/ETC/hss_fd.conf $ETC_TARGET/freeDiameter
 
 
-update_config_file "MYSQL_user   = \"hssadmin\";" "MYSQL_user   = \"$HSS_USER\";" $ETC_TARGET/hss.conf
-update_config_file "MYSQL_pass   = \"MS_PW_PHP\";" "MYSQL_pass   = \"$HSS_PASS\";" $ETC_TARGET/hss.conf
+update_config_file "MYSQL_user   = \"@MYSQL_user@\";" "MYSQL_user   = \"$HSS_USER\";" $ETC_TARGET/hss.conf
+update_config_file "MYSQL_pass   = \"@MYSQL_pass@\";" "MYSQL_pass   = \"$HSS_PASS\";" $ETC_TARGET/hss.conf
 update_config_file "OPERATOR_key = \"1006020f0a478bf6b699f15c062e42b3\"" "OPERATOR_key = \"31323334353637383930313233343536\""  $ETC_TARGET/hss.conf
 
 cd $OPENAIRCN_DIR/SCRIPTS

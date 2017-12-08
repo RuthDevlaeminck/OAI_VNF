@@ -1,5 +1,5 @@
 {
-    "name": "oaispgw_theirs",
+    "name": "oaispgw",
     "vendor": "Evolved Core Network",
     "version": "1",
     "lifecycle_event": [
@@ -50,7 +50,7 @@
     ],
     "deployment_flavour": [
         {
-            "flavour_key": "m1.medium"
+            "flavour_key": "m1.large"
         }
     ],
     "type": "oaispgw",

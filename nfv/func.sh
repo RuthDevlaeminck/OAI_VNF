@@ -73,11 +73,12 @@ function getInterfaceName {
 function install_service_file()
 {
   SERVICE_INSTALL=$1
-  OPENAIRCN_DIR=/root/openair-cn
-  SERVICE_TEMPLATE=/opt/openbaton/scripts/oai.service
+  SERVICE_TEMPLATE=$SCRIPTS_PATH/oai.service
   SERVICE_DIR=/etc/systemd/system
   SERVICE_FILE=$SERVICE_DIR/$SERVICE_INSTALL.service
+  RUN_FILE=$SCRIPTS_PATH/run_oai.sh
 
+  cp $RUN_FILE $OPENAIRCN_DIR/SCRIPTS
   cp $SERVICE_TEMPLATE $SERVICE_FILE
   sed -i -e "s:%OPENAIRCN_DIR%:$OPENAIRCN_DIR:g" $SERVICE_FILE
   sed -i -e "s:%SERVICE%:$SERVICE_INSTALL:g" $SERVICE_FILE

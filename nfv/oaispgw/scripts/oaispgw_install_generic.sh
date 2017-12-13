@@ -20,6 +20,7 @@ update_config_file "SGW_IPV4_ADDRESS_FOR_S1U_S12_S4_UP      = \"192.168.11.17\/2
 update_config_file "PGW_INTERFACE_NAME_FOR_SGI            = \"eth3\";" "PGW_INTERFACE_NAME_FOR_SGI            = \"$WEB_INTERFACE\";" $ETC_TARGET/spgw.conf
 update_config_file "DEFAULT_DNS_IPV4_ADDRESS     = \"8.8.8.8\"" "DEFAULT_DNS_IPV4_ADDRESS     = \"$DNS\"" $ETC_TARGET/spgw.conf
 update_config_file "172.16.0.0\/12" "172.16.0.0\/24" $ETC_TARGET/spgw.conf
+update_config_file "PGW_MASQUERADE_SGI                    = \"no\";" "PGW_MASQUERADE_SGI                    = \"yes\";" $ETC_TARGET/spgw.conf
 
 install_service_file "spgw"
 

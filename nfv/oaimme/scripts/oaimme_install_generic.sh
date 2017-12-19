@@ -15,20 +15,6 @@ SIGNAL_IP=$2
 cp $OPENAIRCN_DIR/ETC/mme.conf $ETC_TARGET
 cp $OPENAIRCN_DIR/ETC/mme_fd.conf $ETC_TARGET/freeDiameter
 
-if [ "$EMULATOR" == "true" || "$EMULATOR" == "TRUE" ]; then
-  MCC=$MCC_EMULATOR
-  MNC=$MNC_EMULATOR
-  TAC=$TAC_EMULATOR
-  INT_ALG_LIST=$INT_ALG_LIST_EMULATOR
-  CIPH_ALG_LIST_EMULATOR=$CIPH_ALG_LIST_EMULATOR
-else
-  MCC=$MCC_REAL
-  MNC=$MNC_REAL
-  TAC=$TAC_REAL
-  INT_ALG_LIST=$INT_ALG_LIST_REAL
-  CIPH_ALG_LIST_EMULATOR=$CIPH_ALG_LIST_REAL
-fi
-
 update_config_file "MME_INTERFACE_NAME_FOR_S1_MME         = \"enp0s8\";" "MME_INTERFACE_NAME_FOR_S1_MME         = \"$SIGNAL_INTERFACE\";" $ETC_TARGET/mme.conf 
 update_config_file "MME_IPV4_ADDRESS_FOR_S1_MME           = \"192.168.11.17\/24\";" "MME_IPV4_ADDRESS_FOR_S1_MME           = \"$SIGNAL_IP\/24\";" $ETC_TARGET/mme.conf
 update_config_file "yang" "$hostname" $ETC_TARGET/freeDiameter/mme_fd.conf

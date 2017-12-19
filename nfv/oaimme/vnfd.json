@@ -41,10 +41,6 @@
             {
                 "confKey": "hss_ip",
                 "value": ""
-            },
-            {
-                "confKey": "EMULATOR",
-                "value": "true"
             }
         ]
     },

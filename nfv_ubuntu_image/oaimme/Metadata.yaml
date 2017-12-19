@@ -1,0 +1,9 @@
+name: oaimme
+provider: "Evolved Core Network"
+nfvo_version: 5.1.0
+image:
+    upload: false
+    names:
+        - oai-lxc-image
+vim_types:
+    - openstack

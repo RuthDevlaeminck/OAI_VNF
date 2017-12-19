@@ -1,0 +1,15 @@
+SERVICE="OAI-MME"
+OPENAIRCN_DIR="/root/openair-cn"
+ETC_TARGET="/usr/local/etc/oai"
+LOGFILE="/opt/install.log"
+INTERFACES_DIR="/etc/network/interfaces.d"
+
+LOG_DIR="/var/log/oai"
+ESCAPED_LOG_DIR="\/var\/log\/oai"
+
+MCC="208"
+MNC="95"
+TAC="1"
+# these must be escapes comma separated lists
+INT_ALG_LIST="\"EIA2\" , \"EIA1\" , \"EIA0\""
+CIPH_ALG_LIST="\"EEA0\" , \"EEA1\" , \"EEA2\""

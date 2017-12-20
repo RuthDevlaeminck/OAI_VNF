@@ -5,8 +5,8 @@ After=network-online.target mysql.service
 
 [Service]
 Type=forking
-ExecStart=%OPENAIRCN_DIR%/SCRIPTS/run_oai.sh %SERVICE% start
-ExecStop=%OPENAIRCN_DIR%/SCRIPTS/run_oai.sh %SERVICE% stop
+ExecStart=%OPENAIRCN_SCRIPTS%/run_oai.sh %SERVICE% start
+ExecStop=%OPENAIRCN_SCRIPTS%/run_oai.sh %SERVICE% stop
 Restart=always
 RestartSec=1
 

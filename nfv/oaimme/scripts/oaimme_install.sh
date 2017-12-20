@@ -18,8 +18,6 @@ SIGNAL_IP=$mgmt_oa
 
 #create_interface_config_file "$SIGNAL_INTERFACE" >> $LOGFILE 2>&1
 
-mkdir $LOG_DIR
-
 source_generic_service_file "oaimme" "install" "$SIGNAL_INTERFACE" "$SIGNAL_IP" >> $LOGFILE 2>&1
 
 if [ "$hss_ip" != "" ]; then

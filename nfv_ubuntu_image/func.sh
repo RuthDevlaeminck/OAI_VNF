@@ -93,7 +93,7 @@ function upgrade_kernel()
   wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8/linux-headers-4.8.0-040800-generic_4.8.0-040800.201610022031_amd64.deb
   wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8/linux-image-4.8.0-040800-generic_4.8.0-040800.201610022031_amd64.deb
   sudo dpkg -i *.deb
-  reboot
+  sudo reboot
 }
 
 function download_and_build_oai()
@@ -101,13 +101,14 @@ function download_and_build_oai()
   cd /root/
   git clone https://github.com/RuthDevlaeminck/openair-cn.git
 
-  cp /tmp/prereq.sh /root/openair-cn/SCRIPTS
-  cp /tmp/build_helper2 /root/openair-cn/BUILD/TOOLS
+  cp $SCRIPTS_PATH/prereq.sh /root/openair-cn/SCRIPTS
+  cp $SCRIPTS_PATH/build_helper2 /root/openair-cn/BUILD/TOOLS
 
   cd /root/openair-cn/SCRIPTS
   ./prereq.sh
-  apt install mysql-workbench
+  apt install -y mysql-workbench
   ./build_hss
   ./build_mme
   ./build_spgw
 }
+

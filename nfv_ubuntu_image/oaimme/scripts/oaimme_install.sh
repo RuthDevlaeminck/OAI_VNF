@@ -9,6 +9,8 @@ fi
 
 source_defaults_file
 
+download_and_build_oai >> $LOGFILE 2>&1
+
 echo "127.0.1.1       $hostname.openair4G.eur $hostname" >> /etc/hosts
 
 #using only one interface for lxd containers

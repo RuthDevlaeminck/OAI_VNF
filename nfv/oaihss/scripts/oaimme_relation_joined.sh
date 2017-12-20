@@ -11,7 +11,7 @@ source_defaults_file
 
 echo "$oaimme_mgmt_oa       $oaimme_hostname.openair-cn.openair4G.eur   $oaimme_hostname" >> /etc/hosts
 
-update_config_file "yang" "$oaimme_hostname" $OPENAIRCN_DIR/SRC/OAI_HSS/db/oai_db.sql >> $LOGFILE 2>&1
-update_config_file "yang" "$oaimme_hostname" $OPENAIRCN_DIR/SRC/OAI_HSS/db/pft_db.sql >> $LOGFILE 2>&1
+update_config_file "yang" "$oaimme_hostname" $HSS_DB_FILE >> $LOGFILE 2>&1
+update_config_file "yang" "$oaimme_hostname" $OPENAIRCN_HSS_DB_DIR/pft_db.sql >> $LOGFILE 2>&1
 
 

@@ -9,6 +9,16 @@ fi
 
 source_defaults_file 
 
+# install the kernel mods and reboot the box
+if [ ! -f /opt/.rebooted ]; then
+  upgrade_kernel >> $LOGFILE 2>&1
+
+  touch /opt/.rebooted
+  reboot
+fi
+
+download_and_build_oai >> $LOGFILE 2>&1
+
 echo "127.0.1.1       $hostname.openair4G.eur $hostname" >> /etc/hosts
 
 MGMT_INTERFACE=$(getInterfaceName 1)

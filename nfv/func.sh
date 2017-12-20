@@ -31,6 +31,11 @@ function source_generic_service_file {
 }
 
 function source_defaults_file {
+   if [ -f "$SCRIPTS_PATH/default_vals_general" ]; then
+            source $SCRIPTS_PATH/default_vals_general
+   else
+           >&2 echo "$SERVICE: Could not find defaults file $SCRIPTS_PATH/default_vals_general!"
+   fi
    if [ -f "$SCRIPTS_PATH/default_vals" ]; then
             source $SCRIPTS_PATH/default_vals
    else
@@ -78,9 +83,10 @@ function install_service_file()
   SERVICE_FILE=$SERVICE_DIR/$SERVICE_INSTALL.service
   RUN_FILE=$SCRIPTS_PATH/run_oai.sh
 
-  cp $RUN_FILE $OPENAIRCN_DIR/SCRIPTS
+  sed -i -e "s:%OPENAIRCN_SCRIPTS%:$OPENAIRCN_SCRIPTS:g" $RUN_FILE
+  cp $RUN_FILE $OPENAIRCN_SCRIPTS
   cp $SERVICE_TEMPLATE $SERVICE_FILE
-  sed -i -e "s:%OPENAIRCN_DIR%:$OPENAIRCN_DIR:g" $SERVICE_FILE
+  sed -i -e "s:%OPENAIRCN_SCRIPTS%:$OPENAIRCN_SCRIPTS:g" $SERVICE_FILE
   sed -i -e "s:%SERVICE%:$SERVICE_INSTALL:g" $SERVICE_FILE
 }
 

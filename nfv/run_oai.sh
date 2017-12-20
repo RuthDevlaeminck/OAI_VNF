@@ -6,17 +6,15 @@ operation="$2"
 
 function start_process()
 {
-  cd /root/openair-cn/SCRIPTS
+  cd %OPENAIRCN_SCRIPTS%
   screen -wipe >/dev/null
   screen -S $process -d -m -h 10000 ./run_$process
 }
 
 function stop_process()
 {
-  cd /root/openair-cn/SCRIPTS
+  cd %OPENAIRCN_SCRIPTS%
   ./run_$process -k
-#  screen -S $process -X quit
-#  ps fax|grep "run_$process" | awk '{}{printf "Stopping PID %s\n",$1; system("kill -KILL " $1 " >/dev/null");}'
   screen -wipe >/dev/null
 }
 

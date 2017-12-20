@@ -26,17 +26,15 @@ echo "gtp" >> /etc/modules-load.d/modules.conf
 
 "Cloning git repository into /root/openair-cn"
 cd /root/
-#git clone https://gitlab.eurecom.fr/oai/openair-cn
-git clone https://github.com/RuthDevlaeminck/openair-cn.git
+git clone -b develop https://gitlab.eurecom.fr/oai/openair-cn
 
 # copy prereq script into correct openair folder
-cp $THIS_SCRIPT_PATH/$preq_script /root/openair-cn/SCRIPTS/
+cp $THIS_SCRIPT_PATH/$preq_script /root/openair-cn/scripts
 
 # copy buildhelper script into correct openair folder
-cp $THIS_SCRIPT_PATH/$helper_script /root/openair-cn/BUILD/TOOLS/
+cp $THIS_SCRIPT_PATH/$helper_script /root/openair-cn/build/tools/
 
-# we added a prereq script that I am including in the email
-cd /root/openair-cn/SCRIPTS
+cd /root/openair-cn/scripts
 
 apt-get update
 apt-get install mysql-workbench -y

@@ -1,0 +1,6 @@
+#!/bin/bash -e
+# NOTE: the -e above will cause the script to exit if anything returns a non-zero value
+
+cp $TMP_HOOKS_PATH/extra-data.d/build_helper2 $TMP_BUILD_DIR/mnt/tmp
+cp $TMP_HOOKS_PATH/extra-data.d/prereq.sh $TMP_BUILD_DIR/mnt/tmp
+

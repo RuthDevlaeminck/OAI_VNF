@@ -1,0 +1,30 @@
+#!/bin/bash -e
+# NOTE: the -e above will cause the script to exit if anything returns a non-zero value
+# Download and build the VerizonHSS code
+
+grep -v "StrictHostKeyChecking" /etc/ssh/ssh_config > /tmp/ssh_config
+mv /tmp/ssh_config /etc/ssh/ssh_config
+echo "StrictHostKeyChecking=no" >> /etc/ssh/ssh_config
+
+cd /tmp
+mkdir kernel
+cd kernel
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8/linux-headers-4.8.0-040800_4.8.0-040800.201610022031_all.deb
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8/linux-headers-4.8.0-040800-generic_4.8.0-040800.201610022031_amd64.deb
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8/linux-image-4.8.0-040800-generic_4.8.0-040800.201610022031_amd64.deb
+sudo dpkg -i *.deb
+
+cd /root/
+git clone -b develop https://gitlab.eurecom.fr/oai/openair-cn.git
+
+cp /tmp/prereq.sh /root/openair-cn/scripts
+cp /tmp/build_helper2 /root/openair-cn/build/tools
+
+cd /root/openair-cn/scripts
+./prereq.sh
+apt install -y mysql-workbench
+./build_hss 
+./build_mme
+./build_spgw
+
+echo "root:root" | chpasswd

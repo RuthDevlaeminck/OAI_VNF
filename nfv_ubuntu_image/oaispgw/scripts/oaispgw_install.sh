@@ -9,13 +9,21 @@ fi
 
 source_defaults_file 
 
-# install the kernel mods and reboot the box
-if [ ! -f /opt/.rebooted ]; then
-  upgrade_kernel >> $LOGFILE 2>&1
+if [ ! -d $OPENAIRCN_DIR ]; then
+  # install the kernel mods and reboot the box
+  if [ ! -f /opt/.rebooted ]; then
+    upgrade_kernel >> $LOGFILE 2>&1
 
-  touch /opt/.rebooted
-  reboot
+    touch /opt/.rebooted
+    reboot
+  fi
+  echo "downloading and installing oai software" >> $LOGFILE 2>&1
+  download_and_build_oai  >> $LOGFILE 2>&1
+else
+  echo "using pre-installed image" >> $LOGFILE 2>&1
 fi
+
+
 
 echo "127.0.1.1       $hostname.openair4G.eur $hostname" >> /etc/hosts
 

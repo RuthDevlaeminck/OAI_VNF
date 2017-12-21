@@ -9,8 +9,6 @@ fi
 
 source_defaults_file
 
-download_and_build_oai  >> $LOGFILE 2>&1
-
 # and since we don't want to have to enter the gui for phpmyadmin
 mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$DB_PASSWORD'"
 echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections

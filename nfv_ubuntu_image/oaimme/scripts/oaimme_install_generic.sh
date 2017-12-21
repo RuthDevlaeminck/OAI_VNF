@@ -9,8 +9,6 @@ fi
 
 source_defaults_file 
 
-download_and_build_oai  >> $LOGFILE 2>&1
-
 SIGNAL_INTERFACE=$1
 SIGNAL_IP=$2
 

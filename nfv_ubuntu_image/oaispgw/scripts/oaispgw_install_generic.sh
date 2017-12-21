@@ -9,14 +9,6 @@ fi
 
 source_defaults_file
 
-if [ ! -f /opt/.rebooted ]; then
-  upgrade_kernel
-  touch /opt/.rebooted
-  reboot
-fi
-
-download_and_build_oai  >> $LOGFILE 2>&1
-
 SIGNAL_INTERFACE=$1
 WEB_INTERFACE=$2
 SIGNAL_IP=$3

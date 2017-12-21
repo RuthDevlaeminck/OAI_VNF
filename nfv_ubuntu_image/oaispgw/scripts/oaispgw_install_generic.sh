@@ -15,13 +15,13 @@ if [ ! -f /opt/.rebooted ]; then
   reboot
 fi
 
-download_and_build_oai
+download_and_build_oai  >> $LOGFILE 2>&1
 
 SIGNAL_INTERFACE=$1
 WEB_INTERFACE=$2
 SIGNAL_IP=$3
 
-cp $OPENAIRCN_DIR/ETC/spgw.conf $ETC_TARGET
+cp $OPENAIRCN_ETC/spgw.conf $ETC_TARGET
 
 update_config_file "SGW_INTERFACE_NAME_FOR_S1U_S12_S4_UP    = \"eth0\";" "SGW_INTERFACE_NAME_FOR_S1U_S12_S4_UP    = \"$SIGNAL_INTERFACE\";" $ETC_TARGET/spgw.conf 
 update_config_file "SGW_IPV4_ADDRESS_FOR_S1U_S12_S4_UP      = \"192.168.11.17\/24\";" "SGW_IPV4_ADDRESS_FOR_S1U_S12_S4_UP      = \"$SIGNAL_IP\/24\";" $ETC_TARGET/spgw.conf 

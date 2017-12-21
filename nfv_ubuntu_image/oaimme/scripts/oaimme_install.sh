@@ -9,8 +9,6 @@ fi
 
 source_defaults_file
 
-download_and_build_oai >> $LOGFILE 2>&1
-
 echo "127.0.1.1       $hostname.openair4G.eur $hostname" >> /etc/hosts
 
 #using only one interface for lxd containers
@@ -19,8 +17,6 @@ SIGNAL_INTERFACE=$(getInterfaceName 1)
 SIGNAL_IP=$mgmt_oa
 
 #create_interface_config_file "$SIGNAL_INTERFACE" >> $LOGFILE 2>&1
-
-mkdir $LOG_DIR
 
 source_generic_service_file "oaimme" "install" "$SIGNAL_INTERFACE" "$SIGNAL_IP" >> $LOGFILE 2>&1
 

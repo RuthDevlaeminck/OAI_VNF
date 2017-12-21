@@ -9,7 +9,7 @@ fi
 source_defaults_file
 
 # start the hss
-cd $OPENAIRCN_DIR/SCRIPTS
+cd $OPENAIRCN_SCRIPTS
 ./hss_db_import $DB_HOST $HSS_USER $HSS_PASS $HSS_DB $HSS_DB_FILE
 systemctl enable hss
 systemctl start hss

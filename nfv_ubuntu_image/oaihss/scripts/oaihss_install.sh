@@ -9,8 +9,6 @@ fi
 
 source_defaults_file
 
-download_and_build_oai >> $LOGFILE 2>&1
-
 echo "127.0.1.1       hss.openair4G.eur   hss" >> /etc/hosts
 echo "127.0.1.1       $hostname" >> /etc/hosts
 

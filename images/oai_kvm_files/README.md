@@ -32,7 +32,7 @@ Upgrade setuptools to the latest version: (from setuptools-18.3.3 to setuptools-
 
 ### Tell the diskimage-builder where your elements are
 
-    export ELEMENTS_PATH=~/OAI_VNF/dib_elements
+    export ELEMENTS_PATH=~/OAI_VNF/images/oai_kvm_files/dib_elements
 
 
 ### Build the image

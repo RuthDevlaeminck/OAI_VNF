@@ -1,1 +1,1 @@
-../../prereq.sh
+../../../scripts/prereq.sh

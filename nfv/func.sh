@@ -90,4 +90,31 @@ function install_service_file()
   sed -i -e "s:%SERVICE%:$SERVICE_INSTALL:g" $SERVICE_FILE
 }
 
+function upgrade_kernel()
+{
+  cd /tmp
+  mkdir kernel
+  cd kernel
+  wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8/linux-headers-4.8.0-040800_4.8.0-040800.201610022031_all.deb
+  wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8/linux-headers-4.8.0-040800-generic_4.8.0-040800.201610022031_amd64.deb
+  wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8/linux-image-4.8.0-040800-generic_4.8.0-040800.201610022031_amd64.deb
+  sudo dpkg -i *.deb
+  sudo reboot
+}
+
+function download_and_build_oai()
+{
+  cd /root/
+  git clone -b develop https://gitlab.eurecom.fr/oai/openair-cn.git
+
+  cp $SCRIPTS_PATH/prereq.sh $OPENAIRCN_SCRIPTS
+  cp $SCRIPTS_PATH/build_helper2 $OPENAIRCN_BUILD_TOOLS
+
+  cd $OPENAIRCN_SCRIPTS
+  ./prereq.sh
+  apt install -y mysql-workbench
+  ./build_hss
+  ./build_mme
+  ./build_spgw
+}
 

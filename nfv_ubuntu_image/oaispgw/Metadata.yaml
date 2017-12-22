@@ -4,6 +4,7 @@ nfvo_version: 5.1.0
 image:
     upload: false
     names:
+        - oai-kvm-image
         - ubuntu_16.04_kvm
 vim_types:
     - openstack

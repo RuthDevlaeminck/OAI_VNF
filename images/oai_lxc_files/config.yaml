@@ -1,0 +1,24 @@
+connect:
+  url: https://localhost:8443
+  trust-password: password
+
+create-container:
+  container-name: image-generation-container
+  container-image-fingerprint: f4eba5df5f88
+
+copy-files:
+  file-tarball: /home/ubuntu/OAI_NFV/images/oai_lxc_files/files.tar
+  file-dest:  /root/files.tar
+
+execute-script:
+  script: oai_image_create.sh
+  clean-tmp-files: True
+
+create-image:
+  destination: /home/ubuntu/OAI_NFV/images/generated
+  name: generated-image
+  # alias: "Published by image-generator"
+
+clean:
+  container: True
+  image-store: True
